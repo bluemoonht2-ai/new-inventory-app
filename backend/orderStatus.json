@@ -1,0 +1,662 @@
+{
+  "gid://shopify/Order/6578574196987": {
+    "status": "out_of_stock",
+    "notes": "Status changed via dashboard",
+    "updatedAt": "2025-11-18T06:55:08.078Z",
+    "shop": "kaalza-inventory.myshopify.com",
+    "history": [
+      {
+        "from": "fresh",
+        "to": "dispatched",
+        "timestamp": "2025-11-03T10:28:26.539Z",
+        "notes": ""
+      },
+      {
+        "from": "dispatched",
+        "to": "confirmed",
+        "timestamp": "2025-11-10T06:04:45.243Z",
+        "notes": ""
+      },
+      {
+        "from": "confirmed",
+        "to": "fresh",
+        "timestamp": "2025-11-11T07:23:30.284Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "fresh",
+        "to": "confirmed",
+        "timestamp": "2025-11-11T11:44:26.843Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "fresh",
+        "timestamp": "2025-11-12T08:11:05.192Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "fresh",
+        "to": "confirmed",
+        "timestamp": "2025-11-12T08:11:37.404Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "fresh",
+        "timestamp": "2025-11-12T10:34:19.605Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "fresh",
+        "to": "confirmed",
+        "timestamp": "2025-11-12T11:32:33.165Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-12T11:32:53.627Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-13T09:50:11.004Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-13T09:50:20.245Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-13T09:50:38.106Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-13T09:50:50.363Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-13T10:02:17.768Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-13T10:02:25.510Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-13T10:11:36.711Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-13T10:11:43.874Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-13T10:15:36.593Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-13T10:15:42.250Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-13T10:16:36.818Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-13T10:16:41.465Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-13T10:16:46.493Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-17T04:18:51.073Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-17T08:02:54.295Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-18T06:54:43.388Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "confirmed",
+        "timestamp": "2025-11-18T06:54:49.337Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-18T06:55:08.078Z",
+        "notes": "Status changed via dashboard"
+      }
+    ]
+  },
+  "gid://shopify/Order/6603831214331": {
+    "status": "out_of_stock",
+    "notes": "Status changed via dashboard",
+    "updatedAt": "2025-11-18T06:54:44.750Z",
+    "shop": "kaalza-inventory.myshopify.com",
+    "history": [
+      {
+        "from": "fresh",
+        "to": "confirmed",
+        "timestamp": "2025-10-31T10:22:07.446Z",
+        "notes": ""
+      },
+      {
+        "from": "confirmed",
+        "to": "dispatched",
+        "timestamp": "2025-10-31T10:22:17.225Z",
+        "notes": ""
+      },
+      {
+        "from": "dispatched",
+        "to": "delivered",
+        "timestamp": "2025-10-31T10:22:26.147Z",
+        "notes": ""
+      },
+      {
+        "from": "delivered",
+        "to": "returned",
+        "timestamp": "2025-10-31T10:22:36.640Z",
+        "notes": ""
+      },
+      {
+        "from": "returned",
+        "to": "damaged",
+        "timestamp": "2025-10-31T10:22:41.582Z",
+        "notes": ""
+      },
+      {
+        "from": "damaged",
+        "to": "confirmed",
+        "timestamp": "2025-10-31T10:23:41.807Z",
+        "notes": ""
+      },
+      {
+        "from": "confirmed",
+        "to": "in_stock",
+        "timestamp": "2025-10-31T10:33:54.511Z",
+        "notes": ""
+      },
+      {
+        "from": "in_stock",
+        "to": "confirmed",
+        "timestamp": "2025-10-31T10:33:56.430Z",
+        "notes": ""
+      },
+      {
+        "from": "confirmed",
+        "to": "dispatched",
+        "timestamp": "2025-10-31T13:18:11.531Z",
+        "notes": ""
+      },
+      {
+        "from": "dispatched",
+        "to": "delivered",
+        "timestamp": "2025-11-03T10:23:02.220Z",
+        "notes": ""
+      },
+      {
+        "from": "delivered",
+        "to": "confirmed",
+        "timestamp": "2025-11-10T05:36:26.858Z",
+        "notes": ""
+      },
+      {
+        "from": "confirmed",
+        "to": "dispatched",
+        "timestamp": "2025-11-10T07:12:05.248Z",
+        "notes": ""
+      },
+      {
+        "from": "dispatched",
+        "to": "delivered",
+        "timestamp": "2025-11-10T07:14:51.397Z",
+        "notes": ""
+      },
+      {
+        "from": "delivered",
+        "to": "dispatched",
+        "timestamp": "2025-11-11T06:33:17.215Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "dispatched",
+        "to": "delivered",
+        "timestamp": "2025-11-11T07:22:22.306Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "delivered",
+        "to": "returned",
+        "timestamp": "2025-11-11T07:22:27.103Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "returned",
+        "to": "fresh",
+        "timestamp": "2025-11-11T07:23:32.403Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "fresh",
+        "to": "returned",
+        "timestamp": "2025-11-11T09:14:09.646Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "returned",
+        "to": "confirmed",
+        "timestamp": "2025-11-11T11:25:05.129Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "fresh",
+        "timestamp": "2025-11-12T08:02:21.089Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "fresh",
+        "to": "confirmed",
+        "timestamp": "2025-11-12T08:02:22.899Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "fresh",
+        "timestamp": "2025-11-12T08:11:04.082Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "fresh",
+        "to": "confirmed",
+        "timestamp": "2025-11-12T08:11:23.880Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "fresh",
+        "timestamp": "2025-11-12T10:34:16.630Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "fresh",
+        "to": "confirmed",
+        "timestamp": "2025-11-12T11:32:24.268Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "dispatched",
+        "timestamp": "2025-11-12T11:33:08.827Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "dispatched",
+        "to": "confirmed",
+        "timestamp": "2025-11-13T10:01:56.344Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-13T10:02:03.906Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-13T10:02:43.031Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-13T10:02:50.693Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-13T10:12:49.111Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-13T10:13:01.395Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-13T10:52:25.632Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-13T10:52:31.232Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-13T11:44:43.432Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-18T04:26:13.903Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-18T06:54:12.689Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-18T06:54:21.273Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-18T06:54:22.613Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-18T06:54:25.018Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-18T06:54:41.221Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-18T06:54:44.750Z",
+        "notes": "Status changed via dashboard"
+      }
+    ]
+  },
+  "gid://shopify/Order/6670299103483": {
+    "status": "canceled",
+    "notes": "Status changed via dashboard",
+    "updatedAt": "2025-11-13T10:53:07.394Z",
+    "shop": "kaalza-inventory.myshopify.com",
+    "history": [
+      {
+        "from": "fresh",
+        "to": "confirmed",
+        "timestamp": "2025-11-11T06:08:57.869Z",
+        "notes": ""
+      },
+      {
+        "from": "confirmed",
+        "to": "confirmed",
+        "timestamp": "2025-11-11T06:09:12.133Z",
+        "notes": ""
+      },
+      {
+        "from": "confirmed",
+        "to": "damaged",
+        "timestamp": "2025-11-11T07:22:36.195Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "damaged",
+        "to": "fresh",
+        "timestamp": "2025-11-11T07:23:34.181Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "fresh",
+        "to": "damaged",
+        "timestamp": "2025-11-11T09:13:33.238Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "damaged",
+        "to": "returned",
+        "timestamp": "2025-11-11T09:13:35.910Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "returned",
+        "to": "delivered",
+        "timestamp": "2025-11-11T09:13:38.181Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "delivered",
+        "to": "dispatched",
+        "timestamp": "2025-11-11T09:13:40.990Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "dispatched",
+        "to": "in_stock",
+        "timestamp": "2025-11-11T09:13:44.003Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "in_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-11T09:13:49.776Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "confirmed",
+        "timestamp": "2025-11-11T09:13:54.077Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "dispatched",
+        "timestamp": "2025-11-11T11:25:17.735Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "dispatched",
+        "to": "confirmed",
+        "timestamp": "2025-11-11T11:25:19.786Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "dispatched",
+        "timestamp": "2025-11-12T07:59:36.442Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "dispatched",
+        "to": "confirmed",
+        "timestamp": "2025-11-12T07:59:38.459Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "fresh",
+        "timestamp": "2025-11-12T08:11:02.659Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "fresh",
+        "to": "confirmed",
+        "timestamp": "2025-11-12T08:11:58.710Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "in_stock",
+        "timestamp": "2025-11-12T08:12:04.436Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "in_stock",
+        "to": "dispatched",
+        "timestamp": "2025-11-12T08:12:05.999Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "dispatched",
+        "to": "confirmed",
+        "timestamp": "2025-11-12T09:46:23.649Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "in_stock",
+        "timestamp": "2025-11-12T10:05:38.755Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "in_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-12T10:05:40.408Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "fresh",
+        "timestamp": "2025-11-12T10:34:13.624Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "fresh",
+        "to": "confirmed",
+        "timestamp": "2025-11-12T10:34:26.383Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "delivered",
+        "timestamp": "2025-11-12T11:33:19.955Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "delivered",
+        "to": "confirmed",
+        "timestamp": "2025-11-12T11:37:43.594Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-12T11:38:00.462Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-13T08:23:27.134Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-13T08:23:42.553Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-13T08:51:52.205Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-13T08:52:03.035Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-13T08:52:08.590Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-13T09:49:41.372Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "out_of_stock",
+        "timestamp": "2025-11-13T09:49:53.001Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "out_of_stock",
+        "to": "confirmed",
+        "timestamp": "2025-11-13T09:55:43.054Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "confirmed",
+        "to": "delivered",
+        "timestamp": "2025-11-13T09:55:56.503Z",
+        "notes": "Status changed via dashboard"
+      },
+      {
+        "from": "delivered",
+        "to": "canceled",
+        "timestamp": "2025-11-13T10:53:07.394Z",
+        "notes": "Status changed via dashboard"
+      }
+    ]
+  }
+}

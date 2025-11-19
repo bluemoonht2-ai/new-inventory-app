@@ -1,0 +1,23 @@
+{
+  "gid://shopify/ProductVariant/47598673199355": "10",
+  "gid://shopify/ProductVariant/47598673232123": "19",
+  "gid://shopify/ProductVariant/47598673264891": "25",
+  "gid://shopify/ProductVariant/47598673330427": "5",
+  "gid://shopify/ProductVariant/47598673363195": "10",
+  "gid://shopify/ProductVariant/47647713198331": "9",
+  "KL010": {
+    "initialInventory": 1,
+    "reorderPoint": 5,
+    "lastUpdated": "2025-11-12T09:47:34.071Z"
+  },
+  "KL008": {
+    "initialInventory": 8,
+    "reorderPoint": 5,
+    "lastUpdated": "2025-11-11T08:06:05.368Z"
+  },
+  "KL1030": {
+    "initialInventory": 1,
+    "reorderPoint": 5,
+    "lastUpdated": "2025-11-12T11:37:30.849Z"
+  }
+}

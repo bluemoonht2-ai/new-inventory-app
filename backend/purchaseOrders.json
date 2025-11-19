@@ -1,0 +1,122 @@
+[
+  {
+    "id": "PO-1763034291463-B18PQ",
+    "originalOrderId": "gid://shopify/Order/6603831214331",
+    "originalOrderName": "#1002",
+    "items": [
+      {
+        "productName": "wooden hotpot",
+        "quantity": 1,
+        "sku": "N/A",
+        "variantTitle": "Default Title"
+      }
+    ],
+    "createdAt": "2025-11-13T11:44:51.463Z",
+    "status": "received",
+    "notes": "Created for order #1002 due to out of stock items.",
+    "shop": "kaalza-inventory.myshopify.com",
+    "updatedAt": "2025-11-13T11:45:03.291Z"
+  },
+  {
+    "id": "PO-1763353140035-EYBBQ",
+    "originalOrderId": "gid://shopify/Order/6578574196987",
+    "originalOrderName": "#1001",
+    "items": [
+      {
+        "productName": "damp brook",
+        "quantity": 2,
+        "sku": "N/A",
+        "variantTitle": "Default Title"
+      }
+    ],
+    "createdAt": "2025-11-17T04:19:00.035Z",
+    "status": "ordered",
+    "notes": "Created for order #1001 due to out of stock items.",
+    "shop": "kaalza-inventory.myshopify.com"
+  },
+  {
+    "id": "PO-1763366574131-KMT0Q",
+    "originalOrderId": "gid://shopify/Order/6578574196987",
+    "originalOrderName": "#1001",
+    "items": [
+      {
+        "productName": "damp brook",
+        "quantity": 2,
+        "sku": "N/A",
+        "variantTitle": "Default Title"
+      }
+    ],
+    "createdAt": "2025-11-17T08:02:54.131Z",
+    "status": "ordered",
+    "notes": "Created for order #1001 due to out of stock items.",
+    "shop": "kaalza-inventory.myshopify.com"
+  },
+  {
+    "id": "PO-1763439973735-DQH0F",
+    "originalOrderId": "gid://shopify/Order/6603831214331",
+    "originalOrderName": "#1002",
+    "items": [
+      {
+        "productName": "wooden hotpot",
+        "quantity": 1,
+        "sku": "N/A",
+        "variantTitle": "Default Title"
+      }
+    ],
+    "createdAt": "2025-11-18T04:26:13.735Z",
+    "status": "ordered",
+    "notes": "Created for order #1002 due to out of stock items.",
+    "shop": "kaalza-inventory.myshopify.com"
+  },
+  {
+    "id": "PO-1763448858915-7Q2QA",
+    "originalOrderId": "gid://shopify/Order/6603831214331",
+    "originalOrderName": "#1002",
+    "items": [
+      {
+        "productName": "wooden hotpot",
+        "quantity": 1,
+        "sku": "N/A",
+        "variantTitle": "Default Title"
+      }
+    ],
+    "createdAt": "2025-11-18T06:54:18.915Z",
+    "status": "ordered",
+    "notes": "Created for order #1002 due to out of stock items.",
+    "shop": "kaalza-inventory.myshopify.com"
+  },
+  {
+    "id": "PO-1763448869876-6Y23B",
+    "originalOrderId": "gid://shopify/Order/6603831214331",
+    "originalOrderName": "#1002",
+    "items": [
+      {
+        "productName": "wooden hotpot",
+        "quantity": 1,
+        "sku": "N/A",
+        "variantTitle": "Default Title"
+      }
+    ],
+    "createdAt": "2025-11-18T06:54:29.876Z",
+    "status": "ordered",
+    "notes": "Created for order #1002 due to out of stock items.",
+    "shop": "kaalza-inventory.myshopify.com"
+  },
+  {
+    "id": "PO-1763448901921-3LYCW",
+    "originalOrderId": "gid://shopify/Order/6578574196987",
+    "originalOrderName": "#1001",
+    "items": [
+      {
+        "productName": "damp brook",
+        "quantity": 2,
+        "sku": "N/A",
+        "variantTitle": "Default Title"
+      }
+    ],
+    "createdAt": "2025-11-18T06:55:01.921Z",
+    "status": "ordered",
+    "notes": "Created for order #1001 due to out of stock items.",
+    "shop": "kaalza-inventory.myshopify.com"
+  }
+]

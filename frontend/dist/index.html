@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Shopify Inventory Manager</title>
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors https://*.myshopify.com https://admin.shopify.com;">
+    <style>
+      /* Prevent flash of unstyled content */
+      body { 
+        opacity: 0; 
+        transition: opacity 0.3s ease-in-out;
+      }
+      body.loaded { 
+        opacity: 1; 
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-CUcYDpS3.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CW2LvVl3.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Add loaded class when page is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('loaded');
+      });
+    </script>
+  </body>
+</html>

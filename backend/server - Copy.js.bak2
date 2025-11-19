@@ -1,0 +1,267 @@
+// backend/server.js
+import express from "express";
+import fetch from "node-fetch";
+import dotenv from "dotenv";
+import bodyParser from "body-parser";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import cors from "cors";
+import rateLimit from "express-rate-limit";
+import { stringify } from "csv-stringify/sync";
+dotenv.config();
+const app = express();
+app.use(bodyParser.json());
+app.use(cors());
+const limiter = rateLimit({ windowMs: 60 * 1000, max: 120 });
+app.use(limiter);
+
+const {
+SHOPIFY_API_KEY,
+SHOPIFY_API_SECRET,
+SCOPES = "read_products,read_orders",
+HOST,
+PORT = 3000,
+} = process.env;
+if (!SHOPIFY_API_KEY || !SHOPIFY_API_SECRET || !HOST) {
+console.error("Please set SHOPIFY_API_KEY, SHOPIFY_API_SECRET and HOST
+in .env");
+process.exit(1);
+}
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const TOKENS_FILE = path.join(__dirname, "tokens.json");
+const INVENTORY_FILE = path.join(__dirname, "inventory.json");
+const ORDERSTATUS_FILE = path.join(__dirname, "orderStatus.json");
+const readJSON = (file) => {
+try {
+return JSON.parse(fs.readFileSync(file, "utf8"));
+} catch {
+return {};
+}
+};
+const saveJSON = (file, data) =>
+fs.writeFileSync(file, JSON.stringify(data, null, 2), "utf8");
+// OAuth Routes (unchanged)
+app.get("/auth", (req, res) => {
+const { shop } = req.query;
+if (!shop) return res.status(400).send("Missing shop param.");
+const redirectUri = `${HOST}/auth/callback`;
+const installUrl = `https://${shop}/admin/oauth/authorize?client_id=$
+{SHOPIFY_API_KEY}&scope=${encodeURIComponent(
+SCOPES
+)}&redirect_uri=${encodeURIComponent(redirectUri)}`;
+res.redirect(installUrl);
+});
+app.get("/auth/callback", async (req, res) => {
+const { shop, code } = req.query;
+const tokenUrl = `https://${shop}/admin/oauth/access_token`;
+const resp = await fetch(tokenUrl, {
+
+  method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({
+client_id: SHOPIFY_API_KEY,
+client_secret: SHOPIFY_API_SECRET,
+code,
+}),
+});
+const data = await resp.json();
+const tokens = readJSON(TOKENS_FILE);
+tokens[shop] = { access_token: data.access_token };
+saveJSON(TOKENS_FILE, tokens);
+res.redirect(`${HOST}/?shop=${shop}`);
+});
+// GraphQL helper
+async function graphql(shop, token, query, vars = {}) {
+const r = await fetch(`https://${shop}/admin/api/2025-10/graphql.json`, {
+method: "POST",
+headers: {
+"Content-Type": "application/json",
+"X-Shopify-Access-Token": token,
+},
+body: JSON.stringify({ query, variables: vars }),
+});
+if (!r.ok) throw new Error(`Shopify fetch failed: ${r.status}`);
+return r.json();
+}
+// Products endpoint
+app.get("/api/products", async (req, res) => {
+try {
+const { shop } = req.query;
+const tokens = readJSON(TOKENS_FILE);
+const token = tokens[shop]?.access_token;
+if (!token) return res.status(403).send("App not installed.");
+const q = `query($first:Int){ products(first:$first) { edges { node { id
+title handle createdAt variants(first:50) { edges { node { id sku title price
+inventoryQuantity } } } } } } }`;
+const json = await graphql(shop, token, q, { first: 100 });
+res.json(json);
+} catch (e) {
+console.error(e);
+res.status(500).json({ error: e.message });
+}
+});
+
+// Orders endpoint (expanded fields)
+app.get("/api/orders", async (req, res) => {
+try {
+const { shop } = req.query;
+const tokens = readJSON(TOKENS_FILE);
+const token = tokens[shop]?.access_token;
+if (!token) return res.status(403).send("App not installed.");
+const q = `query($first:Int){ orders(first:$first) { edges { node { id name
+processedAt displayFulfillmentStatus totalPriceSet { shopMoney { amount
+currencyCode } } customer { displayName } lineItems(first:50) { edges { node
+{ title quantity originalUnitPriceSet { shopMoney { amount
+currencyCode } } } } } } } } }`;
+const json = await graphql(shop, token, q, { first: 250 });
+res.json(json);
+} catch (e) {
+console.error(e);
+res.status(500).json({ error: e.message });
+}
+});
+// Analytics endpoint: aggregates by day and computes top products
+app.get("/api/analytics", async (req, res) => {
+try {
+const { shop } = req.query;
+const tokens = readJSON(TOKENS_FILE);
+const token = tokens[shop]?.access_token;
+if (!token) return res.status(403).send("App not installed.");
+// fetch orders (could paginate in production)
+const q = `query { orders(first:250) { edges { node { id name processedAt
+totalPriceSet { shopMoney { amount } } lineItems(first:50) { edges { node
+{ title quantity originalUnitPriceSet { shopMoney { amount } } } } } } } } }`;
+const json = await graphql(shop, token, q);
+const orders = json.data?.orders?.edges?.map((e) => e.node) || [];
+// Sales over time (group by date)
+const salesByDate = {};
+const productCounts = {};
+let totalSales = 0;
+orders.forEach((o) => {
+const date = o.processedAt ? new
+Date(o.processedAt).toISOString().slice(0, 10) : "unknown";
+const amount = parseFloat(o.totalPriceSet?.shopMoney?.amount || 0);
+totalSales += amount;
+salesByDate[date] = (salesByDate[date] || 0) + amount;
+
+const lineItems = o.lineItems?.edges?.map((x) => x.node) || [];
+lineItems.forEach((li) => {
+const title = li.title || "Unknown";
+productCounts[title] = (productCounts[title] || 0) + (li.quantity || 0);
+});
+});
+const topProducts = Object.entries(productCounts)
+.sort((a, b) => b[1] - a[1])
+.slice(0, 10)
+.map(([title, qty]) => ({ title, qty }));
+res.json({ totalSales, salesByDate, topProducts });
+} catch (e) {
+console.error(e);
+res.status(500).json({ error: e.message });
+}
+});
+// CSV export endpoints
+app.get("/api/export/orders.csv", async (req, res) => {
+try {
+const { shop } = req.query;
+const tokens = readJSON(TOKENS_FILE);
+const token = tokens[shop]?.access_token;
+if (!token) return res.status(403).send("App not installed.");
+const q = `query { orders(first:250) { edges { node { id name processedAt
+totalPriceSet { shopMoney { amount currencyCode } } customer { displayName }
+lineItems(first:50) { edges { node { title quantity originalUnitPriceSet
+{ shopMoney { amount currencyCode } } } } } } } } }`;
+const json = await graphql(shop, token, q);
+const orders = json.data?.orders?.edges?.map((e) => e.node) || [];
+const rows = orders.map((o) => ({
+id: o.id,
+name: o.name,
+processedAt: o.processedAt,
+total: o.totalPriceSet?.shopMoney?.amount,
+currency: o.totalPriceSet?.shopMoney?.currencyCode,
+customer: o.customer?.displayName,
+items: (o.lineItems?.edges || []).map((x) => `${x.node.title}($
+{x.node.quantity})`).join(" | "),
+}));
+const csv = stringify(rows, { header: true });
+res.setHeader("Content-Type", "text/csv");
+res.setHeader("Content-Disposition", `attachment; filename="orders_$
+{shop}.csv"`);
+res.send(csv);
+} catch (e) {
+console.error(e);
+res.status(500).json({ error: e.message });
+}
+});
+app.get("/api/export/inventory.csv", (req, res) => {
+try {
+const inv = readJSON(INVENTORY_FILE);
+const rows = Object.entries(inv).map(([sku, v]) => ({ sku,
+initialInventory: v.initialInventory }));
+const csv = stringify(rows, { header: true });
+res.setHeader("Content-Type", "text/csv");
+res.setHeader("Content-Disposition", `attachment;
+filename="inventory.csv"`);
+res.send(csv);
+} catch (e) {
+console.error(e);
+res.status(500).json({ error: e.message });
+}
+});
+// Purchase suggestion endpoint (very simple heuristic)
+app.get("/api/purchase-suggestions", async (req, res) => {
+try {
+// read manual inventory and compute suggestions
+const inv = readJSON(INVENTORY_FILE);
+// In a production app you'd fetch historical consumption; here we do a
+simple heuristic
+const suggestions = Object.entries(inv).map(([sku, v]) => ({ sku,
+suggestedOrderQty: Math.max(0, (v.reorder || 10) - (v.initialInventory ||
+0)) }));
+res.json({ suggestions });
+} catch (e) {
+console.error(e);
+res.status(500).json({ error: e.message });
+}
+});
+// Manual inventory + order-status endpoints (unchanged)
+app.get("/api/inventory", (req, res) => res.json(readJSON(INVENTORY_FILE)));
+app.post("/api/inventory", (req, res) => {
+const { sku, initialInventory } = req.body;
+if (!sku || initialInventory == null)
+return res.status(400).send("Missing SKU or value.");
+
+const data = readJSON(INVENTORY_FILE);
+data[sku] = { ...(data[sku] || {}), initialInventory };
+saveJSON(INVENTORY_FILE, data);
+res.json({ success: true });
+});
+app.post("/api/inventory/bulk", (req, res) => {
+const { updates } = req.body; // [{sku, qty}]
+if (!Array.isArray(updates)) return res.status(400).send("Invalid payload.");
+const data = readJSON(INVENTORY_FILE);
+updates.forEach((u) => {
+if (!u.sku) return;
+data[u.sku] = { ...(data[u.sku] || {}), initialInventory: u.qty };
+});
+saveJSON(INVENTORY_FILE, data);
+res.json({ success: true });
+});
+app.get("/api/order-status", (req, res) =>
+res.json(readJSON(ORDERSTATUS_FILE)));
+app.post("/api/order-status", (req, res) => {
+const { orderId, status } = req.body;
+if (!orderId || !status) return res.status(400).send("Missing orderId or
+status.");
+const data = readJSON(ORDERSTATUS_FILE);
+data[orderId] = status;
+saveJSON(ORDERSTATUS_FILE, data);
+res.json({ success: true });
+});
+// Serve frontend
+const frontendPath = path.join(__dirname, "../frontend/dist");
+app.use(express.static(frontendPath));
+app.get("*", (req, res) => res.sendFile(path.join(frontendPath, "index.html")));
+app.listen(PORT, () => console.log(` Running on ${PORT}`));

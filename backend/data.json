@@ -1,0 +1,21 @@
+{
+  "orders": [
+    {
+      "id": "gid://shopify/Order/6578574196987",
+      "name": "#1001",
+      "customer": "",
+      "total": "0.0",
+      "currency": "USD",
+      "status": "Fresh"
+    },
+    {
+      "id": "gid://shopify/Order/6603831214331",
+      "name": "#1002",
+      "customer": "",
+      "total": "20.0",
+      "currency": "USD",
+      "status": "Fresh"
+    }
+  ],
+  "inventory": []
+}

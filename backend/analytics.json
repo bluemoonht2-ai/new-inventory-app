@@ -1,0 +1,33 @@
+{
+  "kaalza-inventory.myshopify.com": {
+    "salesData": [
+      {
+        "date": "Oct 27",
+        "revenue": 20
+      },
+      {
+        "date": "Oct 14",
+        "revenue": 0
+      }
+    ],
+    "summary": {
+      "totalRevenue": 20,
+      "totalOrders": 2,
+      "averageOrderValue": 10,
+      "period": "30d"
+    },
+    "productPerformance": [
+      {
+        "product": "wooden hotpot",
+        "quantity": 1,
+        "revenue": 20
+      },
+      {
+        "product": "damp brook",
+        "quantity": 2,
+        "revenue": 0
+      }
+    ],
+    "generatedAt": "2025-10-31T07:29:59.936Z"
+  }
+}
